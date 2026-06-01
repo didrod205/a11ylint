@@ -1,0 +1,74 @@
+{
+  "name": "@didrod2539/a11ylint",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Static accessibility (a11y) linter for HTML — checks WCAG-mapped rules (alt text, form labels, heading order, ARIA validity, landmarks, color contrast, tables) with no headless browser. Deterministic CLI, JSON/Markdown reports, runs in CI.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "a11ylint": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "example": "node dist/cli.js scan examples/bad.html examples/good.html",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "accessibility",
+    "a11y",
+    "wcag",
+    "accessibility-linter",
+    "a11y-linter",
+    "html-accessibility",
+    "axe-alternative",
+    "wcag-checker",
+    "aria",
+    "a11y-ci",
+    "accessibility-audit",
+    "section508",
+    "cli",
+    "typescript"
+  ],
+  "author": "didrod205 (https://github.com/didrod205)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didrod205/a11ylint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/didrod205/a11ylint/issues"
+  },
+  "homepage": "https://github.com/didrod205/a11ylint#readme",
+  "dependencies": {
+    "cac": "^6.7.14",
+    "node-html-parser": "^6.1.13",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

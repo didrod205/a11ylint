@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  </head>
+  <body>
+    <div role="banner">
+      <a href="/"><img src="/logo.png" /></a>
+      <a href="#"></a>
+    </div>
+
+    <h3>Welcome to our store</h3>
+    <h1>Buy now</h1>
+
+    <img src="/hero.png" />
+    <img src="/promo.png" alt="image of a sale banner" />
+
+    <form>
+      <input type="text" name="search" />
+      <input type="email" name="email" placeholder="Email" />
+      <label></label>
+      <button></button>
+    </form>
+
+    <p style="color: #bbbbbb; background-color: #ffffff">Low contrast tagline</p>
+
+    <span role="buton" aria-labeledby="x">Misspelled role and attribute</span>
+
+    <div aria-hidden="true">
+      <a href="/hidden">Focusable but hidden</a>
+    </div>
+
+    <ul>
+      <div>Not a list item</div>
+      <li>Real item</li>
+    </ul>
+
+    <table>
+      <tr>
+        <td>Name</td>
+        <td>Price</td>
+      </tr>
+      <tr>
+        <td>Latte</td>
+        <td>$4</td>
+      </tr>
+    </table>
+
+    <a href="/a" id="dup">One</a>
+    <a href="/b" id="dup">Two</a>
+
+    <button tabindex="3">Wrong focus order</button>
+  </body>
+</html>

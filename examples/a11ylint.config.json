@@ -1,0 +1,14 @@
+{
+  "minLevel": "AA",
+  "minScore": 90,
+  "disableCategories": [],
+  "disableRules": [],
+  "ruleSeverity": {
+    "img-redundant-alt": "warning"
+  },
+  "categoryWeights": {
+    "images": 1.2,
+    "forms": 1.2,
+    "controls": 1.2
+  }
+}

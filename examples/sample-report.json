@@ -1,0 +1,431 @@
+{
+  "tool": "a11ylint",
+  "version": "0.1.0",
+  "generatedAt": "2026-06-01T03:32:56.604Z",
+  "summary": {
+    "pages": 2,
+    "score": 90,
+    "grade": "A",
+    "errors": 12,
+    "warnings": 8,
+    "infos": 2
+  },
+  "pages": [
+    {
+      "source": "examples/bad.html",
+      "title": null,
+      "score": 80,
+      "grade": "B",
+      "counts": {
+        "error": 12,
+        "warning": 8,
+        "info": 2
+      },
+      "categories": [
+        {
+          "category": "images",
+          "label": "Images & media",
+          "score": 79,
+          "error": 2,
+          "warning": 0,
+          "info": 1
+        },
+        {
+          "category": "forms",
+          "label": "Forms & labels",
+          "score": 76,
+          "error": 2,
+          "warning": 1,
+          "info": 0
+        },
+        {
+          "category": "structure",
+          "label": "Document structure",
+          "score": 92,
+          "error": 0,
+          "warning": 2,
+          "info": 0
+        },
+        {
+          "category": "controls",
+          "label": "Interactive controls",
+          "score": 66,
+          "error": 3,
+          "warning": 1,
+          "info": 0
+        },
+        {
+          "category": "aria",
+          "label": "ARIA usage",
+          "score": 70,
+          "error": 3,
+          "warning": 0,
+          "info": 0
+        },
+        {
+          "category": "language",
+          "label": "Language & metadata",
+          "score": 72,
+          "error": 2,
+          "warning": 2,
+          "info": 0
+        },
+        {
+          "category": "tables",
+          "label": "Data tables",
+          "score": 95,
+          "error": 0,
+          "warning": 1,
+          "info": 1
+        },
+        {
+          "category": "color",
+          "label": "Color & contrast",
+          "score": 96,
+          "error": 0,
+          "warning": 1,
+          "info": 0
+        }
+      ],
+      "issues": [
+        {
+          "rule": "img-alt",
+          "severity": "error",
+          "category": "images",
+          "message": "Image is missing an alt attribute",
+          "line": 8,
+          "snippet": "<img src=\"/logo.png\" />",
+          "detail": "Screen readers will announce the file name or nothing.",
+          "fix": "Add alt text, or alt=\"\" with role=\"presentation\" if decorative.",
+          "wcag": {
+            "criterion": "1.1.1",
+            "level": "A",
+            "name": "Non-text Content"
+          }
+        },
+        {
+          "rule": "img-alt",
+          "severity": "error",
+          "category": "images",
+          "message": "Image is missing an alt attribute",
+          "line": 15,
+          "snippet": "<img src=\"/hero.png\" />",
+          "detail": "Screen readers will announce the file name or nothing.",
+          "fix": "Add alt text, or alt=\"\" with role=\"presentation\" if decorative.",
+          "wcag": {
+            "criterion": "1.1.1",
+            "level": "A",
+            "name": "Non-text Content"
+          }
+        },
+        {
+          "rule": "img-redundant-alt",
+          "severity": "info",
+          "category": "images",
+          "message": "Alt text contains a redundant word (\"image of a sale banner\")",
+          "line": 16,
+          "snippet": "<img src=\"/promo.png\" alt=\"image of a sale banner\" />",
+          "detail": "Screen readers already announce images as \"image\".",
+          "fix": "Describe the content, not the medium (drop \"image of\", \"photo of\"…).",
+          "wcag": {
+            "criterion": "1.1.1",
+            "level": "A",
+            "name": "Non-text Content"
+          }
+        },
+        {
+          "rule": "input-label",
+          "severity": "error",
+          "category": "forms",
+          "message": "Form control <input type=\"text\"> has no associated label",
+          "line": 19,
+          "snippet": "<input type=\"text\" name=\"search\" />",
+          "detail": "Users of assistive tech won't know what to enter.",
+          "fix": "Add <label for=\"…\">, wrap it in a <label>, or use aria-label.",
+          "wcag": {
+            "criterion": "3.3.2",
+            "level": "A",
+            "name": "Labels or Instructions"
+          }
+        },
+        {
+          "rule": "input-label",
+          "severity": "error",
+          "category": "forms",
+          "message": "Form control <input type=\"email\"> has no associated label",
+          "line": 20,
+          "snippet": "<input type=\"email\" name=\"email\" placeholder=\"Email\" />",
+          "detail": "Users of assistive tech won't know what to enter.",
+          "fix": "Add <label for=\"…\">, wrap it in a <label>, or use aria-label.",
+          "wcag": {
+            "criterion": "3.3.2",
+            "level": "A",
+            "name": "Labels or Instructions"
+          }
+        },
+        {
+          "rule": "label-empty",
+          "severity": "warning",
+          "category": "forms",
+          "message": "<label> is empty",
+          "line": 21,
+          "snippet": "<label>",
+          "fix": "Give the label visible text describing the control.",
+          "wcag": {
+            "criterion": "3.3.2",
+            "level": "A",
+            "name": "Labels or Instructions"
+          }
+        },
+        {
+          "rule": "landmark-main",
+          "severity": "warning",
+          "category": "structure",
+          "message": "Page has no <main> landmark",
+          "detail": "A main landmark lets users skip directly to primary content.",
+          "fix": "Wrap the primary content in <main>.",
+          "wcag": {
+            "criterion": "1.3.1",
+            "level": "A",
+            "name": "Info and Relationships"
+          }
+        },
+        {
+          "rule": "list-structure",
+          "severity": "warning",
+          "category": "structure",
+          "message": "<ul> has a direct <div> child (only <li> is allowed)",
+          "line": 33,
+          "snippet": "<ul>",
+          "fix": "Move non-<li> content inside an <li>.",
+          "wcag": {
+            "criterion": "1.3.1",
+            "level": "A",
+            "name": "Info and Relationships"
+          }
+        },
+        {
+          "rule": "button-name",
+          "severity": "error",
+          "category": "controls",
+          "message": "Button has no accessible name",
+          "line": 22,
+          "snippet": "<button>",
+          "detail": "Icon-only buttons need a label for screen readers.",
+          "fix": "Add visible text, aria-label, or a titled child.",
+          "wcag": {
+            "criterion": "4.1.2",
+            "level": "A",
+            "name": "Name, Role, Value"
+          }
+        },
+        {
+          "rule": "link-name",
+          "severity": "error",
+          "category": "controls",
+          "message": "Link has no accessible text",
+          "line": 8,
+          "snippet": "<a href=\"/\">",
+          "detail": "Empty links (e.g. icon-only) are unusable with a screen reader.",
+          "fix": "Add link text or aria-label.",
+          "wcag": {
+            "criterion": "2.4.4",
+            "level": "A",
+            "name": "Link Purpose (In Context)"
+          }
+        },
+        {
+          "rule": "link-name",
+          "severity": "error",
+          "category": "controls",
+          "message": "Link has no accessible text",
+          "line": 9,
+          "snippet": "<a href=\"#\">",
+          "detail": "Empty links (e.g. icon-only) are unusable with a screen reader.",
+          "fix": "Add link text or aria-label.",
+          "wcag": {
+            "criterion": "2.4.4",
+            "level": "A",
+            "name": "Link Purpose (In Context)"
+          }
+        },
+        {
+          "rule": "positive-tabindex",
+          "severity": "warning",
+          "category": "controls",
+          "message": "Positive tabindex (3) overrides natural focus order",
+          "line": 52,
+          "snippet": "<button tabindex=\"3\">",
+          "detail": "Positive tabindex values are an anti-pattern and hard to maintain.",
+          "fix": "Use tabindex=0 (or restructure the DOM) instead of positive values.",
+          "wcag": {
+            "criterion": "2.4.3",
+            "level": "A",
+            "name": "Focus Order"
+          }
+        },
+        {
+          "rule": "aria-role-valid",
+          "severity": "error",
+          "category": "aria",
+          "message": "Invalid ARIA role \"buton\"",
+          "line": 27,
+          "snippet": "<span role=\"buton\" aria-labeledby=\"x\">",
+          "detail": "Unknown roles are ignored by assistive technology.",
+          "fix": "Use a valid WAI-ARIA role, or remove the attribute.",
+          "wcag": {
+            "criterion": "4.1.2",
+            "level": "A",
+            "name": "Name, Role, Value"
+          }
+        },
+        {
+          "rule": "aria-attr-valid",
+          "severity": "error",
+          "category": "aria",
+          "message": "Unknown ARIA attribute \"aria-labeledby\"",
+          "line": 27,
+          "snippet": "<span role=\"buton\" aria-labeledby=\"x\">",
+          "detail": "Misspelled or non-existent aria-* attributes have no effect.",
+          "fix": "Check the attribute name against WAI-ARIA.",
+          "wcag": {
+            "criterion": "4.1.2",
+            "level": "A",
+            "name": "Name, Role, Value"
+          }
+        },
+        {
+          "rule": "aria-hidden-focus",
+          "severity": "error",
+          "category": "aria",
+          "message": "aria-hidden element contains focusable content",
+          "line": 29,
+          "snippet": "<div aria-hidden=\"true\">",
+          "detail": "Hiding focusable elements from AT but leaving them in the tab order is confusing.",
+          "fix": "Remove aria-hidden, or make the content non-focusable (tabindex=-1).",
+          "wcag": {
+            "criterion": "4.1.2",
+            "level": "A",
+            "name": "Name, Role, Value"
+          }
+        },
+        {
+          "rule": "html-lang",
+          "severity": "error",
+          "category": "language",
+          "message": "<html> has no lang attribute",
+          "line": 2,
+          "snippet": "<html>",
+          "detail": "Screen readers use lang to choose pronunciation.",
+          "fix": "Add a language, e.g. <html lang=\"en\">.",
+          "wcag": {
+            "criterion": "3.1.1",
+            "level": "A",
+            "name": "Language of Page"
+          }
+        },
+        {
+          "rule": "page-title",
+          "severity": "error",
+          "category": "language",
+          "message": "Page has no <title>",
+          "detail": "The title is the first thing announced and shown in tabs/history.",
+          "fix": "Add a concise, descriptive <title>.",
+          "wcag": {
+            "criterion": "2.4.2",
+            "level": "A",
+            "name": "Page Titled"
+          }
+        },
+        {
+          "rule": "meta-viewport-scalable",
+          "severity": "warning",
+          "category": "language",
+          "message": "Viewport disables zoom (user-scalable=no / maximum-scale=1)",
+          "line": 4,
+          "snippet": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalabl…",
+          "detail": "Blocking zoom prevents low-vision users from enlarging text.",
+          "fix": "Remove user-scalable=no and maximum-scale restrictions.",
+          "wcag": {
+            "criterion": "1.4.4",
+            "level": "AA",
+            "name": "Resize Text"
+          }
+        },
+        {
+          "rule": "duplicate-id",
+          "severity": "warning",
+          "category": "language",
+          "message": "Duplicate id \"dup\"",
+          "line": 50,
+          "snippet": "<a href=\"/b\" id=\"dup\">",
+          "detail": "Duplicate ids break label/aria references and scripting.",
+          "fix": "Make every id unique.",
+          "wcag": {
+            "criterion": "4.1.1",
+            "level": "A",
+            "name": "Parsing"
+          }
+        },
+        {
+          "rule": "table-headers",
+          "severity": "warning",
+          "category": "tables",
+          "message": "Data table has no <th> header cells",
+          "line": 38,
+          "snippet": "<table>",
+          "detail": "Without headers, screen readers can't associate cells with columns/rows.",
+          "fix": "Use <th> for header cells (add scope=\"col\"/\"row\").",
+          "wcag": {
+            "criterion": "1.3.1",
+            "level": "A",
+            "name": "Info and Relationships"
+          }
+        },
+        {
+          "rule": "table-caption",
+          "severity": "info",
+          "category": "tables",
+          "message": "Data table has no <caption>",
+          "line": 38,
+          "snippet": "<table>",
+          "detail": "A caption gives the table an accessible name/summary.",
+          "fix": "Add a <caption> or aria-label describing the table.",
+          "wcag": {
+            "criterion": "1.3.1",
+            "level": "A",
+            "name": "Info and Relationships"
+          }
+        },
+        {
+          "rule": "contrast-inline",
+          "severity": "warning",
+          "category": "color",
+          "message": "Low contrast 1.92:1 (needs 4.5:1)",
+          "line": 25,
+          "snippet": "<p style=\"color: #bbbbbb; background-color: #ffffff\">",
+          "detail": "color #bbbbbb on #ffffff",
+          "fix": "Increase the contrast between text and background.",
+          "wcag": {
+            "criterion": "1.4.3",
+            "level": "AA",
+            "name": "Contrast (Minimum)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "examples/good.html",
+      "title": "Accessible Coffee Shop — Order Online",
+      "score": 100,
+      "grade": "A",
+      "counts": {
+        "error": 0,
+        "warning": 0,
+        "info": 0
+      },
+      "categories": [],
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Accessible Coffee Shop — Order Online</title>
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Order your coffee</h1>
+
+      <p>
+        <img src="/latte.jpg" alt="A latte with leaf art in a white cup" width="320" height="240" />
+      </p>
+
+      <h2>Your details</h2>
+      <form>
+        <p>
+          <label for="name">Full name</label>
+          <input id="name" type="text" name="name" />
+        </p>
+        <p>
+          <label for="email">Email address</label>
+          <input id="email" type="email" name="email" />
+        </p>
+        <p>
+          <label for="size">Cup size</label>
+          <select id="size" name="size">
+            <option value="s">Small</option>
+            <option value="l">Large</option>
+          </select>
+        </p>
+        <button type="submit">Place order</button>
+      </form>
+
+      <h2>Today's prices</h2>
+      <table>
+        <caption>Coffee prices by size</caption>
+        <thead>
+          <tr>
+            <th scope="col">Drink</th>
+            <th scope="col">Small</th>
+            <th scope="col">Large</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Latte</th>
+            <td>$3</td>
+            <td>$4</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <footer>
+      <p style="color: #222222; background-color: #ffffff">© 2026 Accessible Coffee.</p>
+    </footer>
+  </body>
+</html>
